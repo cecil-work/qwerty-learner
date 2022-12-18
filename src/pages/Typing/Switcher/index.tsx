@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SwitcherStateType, SwitcherDispatchType } from '../hooks/useSwitcherState'
 import { useHotkeys } from 'react-hotkeys-hook'
 import Tooltip from 'components/Tooltip'
+import { useSelectedChapter } from 'store/AppState'
 
 export type SwitcherPropsType = {
   state: SwitcherStateType
@@ -10,6 +11,8 @@ export type SwitcherPropsType = {
 }
 
 const Switcher: React.FC<SwitcherPropsType> = ({ state, dispatch }) => {
+  const [selectedChapter, setSelectedChapter] = useSelectedChapter()
+
   useHotkeys(
     'ctrl+m',
     (e) => {
@@ -55,6 +58,23 @@ const Switcher: React.FC<SwitcherPropsType> = ({ state, dispatch }) => {
     (e) => {
       e.preventDefault()
       dispatch('loop')
+    },
+    [dispatch],
+  )
+
+  useHotkeys(
+    'ctrl+p',
+    (e) => {
+      e.preventDefault()
+      setSelectedChapter(Math.max(0, selectedChapter - 1))
+    },
+    [dispatch],
+  )
+  useHotkeys(
+    'ctrl+n',
+    (e) => {
+      e.preventDefault()
+      setSelectedChapter(selectedChapter + 1)
     },
     [dispatch],
   )
