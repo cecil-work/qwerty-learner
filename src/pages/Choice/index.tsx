@@ -7,7 +7,6 @@ import React, { useEffect, useState } from 'react'
 import { useDictionaries, useSelectedDictionary, useSetDictionary } from 'store/AppState'
 import { useChoiceWordList } from './hooks/useChoiceWordList'
 import random from 'random'
-import { DefaultWordsPerChapter } from 'pages/Typing/hooks/useWordList'
 
 export function ChoiceApp() {
   const [order, setOrder] = useState<number>(0)
@@ -18,7 +17,6 @@ export function ChoiceApp() {
   const setDictionary = useSetDictionary()
   const selectedDictionary = useSelectedDictionary()
 
-  const numWordsPerChapter = selectedDictionary.chapterLength ?? DefaultWordsPerChapter
   const [visible, setVisible] = useState(false)
 
   const word = wordList?.words[order]
@@ -27,7 +25,6 @@ export function ChoiceApp() {
     let handleTimer: NodeJS.Timeout
     let handleTimer2: NodeJS.Timeout
     function read() {
-      //const rndOrder = Math.floor(Math.random() * (wordList?.words.length ?? 0))
       const rndOrder = random.int(0, (wordList?.words.length ?? 1) - 1)
 
       const word = wordList?.words[rndOrder]
@@ -112,15 +109,23 @@ export function ChoiceApp() {
           <div
             className="container h-full"
             onClick={(e) => {
-              if (visible) {
-                let isNext = true
-                if (e.clientX / window.screen.availWidth < 0.5) {
-                  isNext = false
+              let isNext = true
+              if (e.clientX / window.screen.availWidth < 0.5) {
+                isNext = false
+              }
+              if (isNext) {
+                if (visible) {
+                  setVisible(false)
+                  setOrder(Math.min(Math.max(0, order + 1), wordList?.words?.length ?? 0))
+                } else {
+                  setVisible(true)
                 }
-                setVisible(false)
-                setOrder(Math.min(Math.max(0, order + (isNext ? 1 : -1)), numWordsPerChapter))
               } else {
-                setVisible(true)
+                if (visible) {
+                  setVisible(false)
+                } else {
+                  setOrder(Math.min(Math.max(0, order - 1), wordList?.words?.length ?? 0))
+                }
               }
             }}
           >
@@ -139,7 +144,7 @@ export function ChoiceApp() {
             {switcherState.phonetic && (word.usphone || word.ukphone) && <Phonetic usphone={word.usphone} ukphone={word.ukphone} />}
 
             <div className="pt-20 pb-10">
-              <Progress order={order} wordsLength={numWordsPerChapter} />
+              <Progress order={order} wordsLength={wordList?.words?.length ?? 0} />
             </div>
           </div>
         ) : null}
