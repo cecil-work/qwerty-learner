@@ -4,6 +4,7 @@ import { useLocalStorage } from 'react-use'
 import { dictionaries, Dictionary } from 'resources/dictionary'
 
 export type PronunciationType = 'us' | 'uk' | 'jap' | false
+export type SelectedChapterRange = { start: number; end: number }
 
 export type AppState = {
   /**
@@ -28,6 +29,8 @@ export type AppState = {
    * The selected chapter number.
    */
   selectedChapter: number
+
+  selectedChapterRange: SelectedChapterRange
   /**
    * Whether random word is enabled
    */
@@ -108,7 +111,7 @@ export function useSetDictionary(): (id: string) => void {
   return (id: string) => {
     const found = dictionaries.find((dict) => dict.id === id)
     if (found !== undefined) {
-      dispatch({ ...state, selectedDictionary: found, selectedChapter: 0 })
+      dispatch({ ...state, selectedDictionary: found, selectedChapter: 0, selectedChapterRange: { start: 0, end: 1 } })
     }
   }
 }
@@ -135,6 +138,11 @@ export function useSelectedChapter(): [number, (chapter: number) => void] {
   return [state.selectedChapter, (selectedChapter: number): void => dispatch({ ...state, selectedChapter })]
 }
 
+export function useSelectedChapterRange(): [SelectedChapterRange, (selectedChapterRange: SelectedChapterRange) => void] {
+  const { state, dispatch } = useContext(AppStateContext)
+  return [state.selectedChapterRange, (selectedChapterRange): void => dispatch({ ...state, selectedChapterRange })]
+}
+
 /**
  * Dark Mode
  */
@@ -157,6 +165,7 @@ const defaultState: AppState = {
   selectedDictionary: dictionaries[0],
   pronunciation: 'us',
   selectedChapter: 0,
+  selectedChapterRange: { start: 0, end: 1 },
   random: false,
   loop: false,
   phonetic: true,

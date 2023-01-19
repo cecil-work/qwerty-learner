@@ -3,6 +3,7 @@ import Tooltip from 'components/Tooltip'
 import usePronunciationSound from 'hooks/usePronunciation'
 import React, { useEffect, useCallback } from 'react'
 import { useHotkeys } from 'react-hotkeys-hook'
+import { IsDesktop } from 'utils/utils'
 
 const WordSound: React.FC<WordSoundProps> = React.memo(({ word, className, inputWord, ...rest }) => {
   const { play, stop, isPlaying } = usePronunciationSound(word)
@@ -18,7 +19,7 @@ const WordSound: React.FC<WordSoundProps> = React.memo(({ word, className, input
   )
 
   useEffect(() => {
-    if (inputWord.length === 0) {
+    if (inputWord.length === (IsDesktop() ? 1 : 0)) {
       stop()
       play()
     }

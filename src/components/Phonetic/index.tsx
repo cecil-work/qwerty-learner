@@ -1,8 +1,8 @@
 import React from 'react'
 
 export type PhoneticProps = {
-  usphone: string
-  ukphone: string
+  usphone?: string
+  ukphone?: string
 }
 
 const Phonetic: React.FC<PhoneticProps> = ({ usphone, ukphone }) => {

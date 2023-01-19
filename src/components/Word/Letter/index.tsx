@@ -2,8 +2,6 @@ import React from 'react'
 
 export type LetterState = 'normal' | 'correct' | 'wrong'
 
-const EXPLICIT_SPACE = '␣'
-
 const stateClassNameMap: Record<string, Record<LetterState, string>> = {
   true: {
     normal: 'text-gray-400',
@@ -17,10 +15,10 @@ const stateClassNameMap: Record<string, Record<LetterState, string>> = {
   },
 }
 
-const Letter: React.FC<LetterProps> = ({ letter, state = 'normal', visible }) => (
+const Letter: React.FC<LetterProps> = ({ letter, state = 'normal', visible, fontXlRate = 5 }) => (
   <span
-    className={`m-0 p-0 text-5xl font-mono font-normal ${
-      stateClassNameMap[((letter === EXPLICIT_SPACE) as unknown) as string][state]
+    className={`m-0 p-0 ${fontXlRate === 1 ? 'text-xl' : fontXlRate === 3 ? 'text-3xl' : 'text-5xl'} font-mono font-normal ${
+      stateClassNameMap[(/[^a-zA-Z0-9']/.test(letter) as unknown) as string][state]
     } pr-0.8 duration-0 dark:text-opacity-80`}
   >
     {visible ? letter : '_'}
@@ -33,4 +31,5 @@ export type LetterProps = {
   letter: string
   state: LetterState
   visible: boolean
+  fontXlRate?: number
 }

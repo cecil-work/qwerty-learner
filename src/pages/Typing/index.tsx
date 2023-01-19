@@ -8,7 +8,7 @@ import Modals from 'components/Modals'
 import Loading from 'components/Loading'
 import Phonetic from 'components/Phonetic'
 import PronunciationSwitcher from './PronunciationSwitcher'
-import { isLegal, IsDesktop } from 'utils/utils'
+import { isLegal } from 'utils/utils'
 import { useHotkeys } from 'react-hotkeys-hook'
 import { useModals } from 'hooks/useModals'
 import useSwitcherState from './hooks/useSwitcherState'
@@ -54,17 +54,6 @@ const App: React.FC = () => {
     // reset order when random change
     setOrder(0)
   }, [random])
-
-  useEffect(() => {
-    // 检测用户设备
-    if (!IsDesktop()) {
-      setTimeout(() => {
-        alert(
-          ' Qwerty Learner 目的为提高键盘工作者的英语输入效率，目前暂未适配移动端，希望您使用桌面端浏览器访问。如您使用的是 Ipad 等平板电脑设备，可以使用外接键盘使用本软件。',
-        )
-      }, 500)
-    }
-  }, [])
 
   useHotkeys(
     'enter',
@@ -224,6 +213,37 @@ const App: React.FC = () => {
                 </div>
               )}
               {isStart && <Progress order={order} wordsLength={wordList.words.length} />}
+              {isStart && (
+                <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-12">
+                  <a
+                    href={`https://search.bilibili.com/all?vt=49693387&keyword=单词+${wordList.words[order].name}&from_source=webtop_search&spm_id_from=333.1007&search_source=5`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold text-gray-900 hover:text-gray-900"
+                  >
+                    Bilibili
+                  </a>
+
+                  <a
+                    href={`https://youdao.com/result?word=${wordList.words[order].name}&lang=en`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold text-gray-900 hover:text-gray-900"
+                  >
+                    Youdao
+                  </a>
+
+                  <a
+                    href={`https://www.collinsdictionary.com/dictionary/english/${wordList.words[order].name}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold text-gray-900 hover:text-gray-900"
+                  >
+                    Collins
+                  </a>
+                </div>
+              )}
+
               <Speed correctCount={correctCount} inputCount={inputCount} isStart={isStart} />
             </div>
           </Main>

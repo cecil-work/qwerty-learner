@@ -2,7 +2,7 @@ import cet4 from 'assets/CET4_T.json'
 import new900_1 from 'assets/NEW900_1.json'
 import { shuffle } from 'lodash'
 import { useMemo } from 'react'
-import { useSelectedChapter, useSelectedDictionary, useRandomState } from 'store/AppState'
+import { useSelectedDictionary, useRandomState, useSelectedChapterRange, SelectedChapterRange } from 'store/AppState'
 import useSWR from 'swr'
 
 export type Word = {
@@ -12,41 +12,42 @@ export type Word = {
   ukphone?: string
 }
 
-export const DefaultWordsPerChapter = 20
+const DefaultWordsPerChapter = 20
 
-export type UseWordListResult = {
+export type UseChoiceWordListResult = {
   dictName: string
-  chapter: number
+  chapterRange: SelectedChapterRange
   chapterListLength: number
   words: Word[]
-  setChapterNumber: (index: number) => void
+  setChapterNumberRange: (range: SelectedChapterRange) => void
 }
 
 /**
  * Use word lists from the current selected dictionary.
  * When the data is loading, this returns `undefined`.
  */
-export function useWordList(): UseWordListResult | undefined {
+export function useChoiceWordList(): UseChoiceWordListResult | undefined {
   const selectedDictionary = useSelectedDictionary()
-
   const [random] = useRandomState()
-  const [currentChapter, setCurrentChapter] = useSelectedChapter()
+  const [currentChapterRange, setCurrentChapterRange] = useSelectedChapterRange()
   const numWordsPerChapter = selectedDictionary.chapterLength ?? DefaultWordsPerChapter
   const { data: wordList } = useSWR([selectedDictionary.id, selectedDictionary.url, numWordsPerChapter], fetchWordList)
-
   const words = useMemo(
-    () => (wordList ? wordList.words.slice(currentChapter * numWordsPerChapter, (currentChapter + 1) * numWordsPerChapter) : []),
-    [wordList, currentChapter, numWordsPerChapter],
+    () =>
+      wordList
+        ? wordList.words.slice(currentChapterRange.start * numWordsPerChapter, (currentChapterRange.end + 1) * numWordsPerChapter)
+        : [],
+    [wordList, currentChapterRange, numWordsPerChapter],
   )
   const shuffleWords = useMemo(() => (random ? shuffle(words) : words), [random, words])
   return wordList === undefined
     ? undefined
     : {
         dictName: selectedDictionary.name,
-        chapter: currentChapter,
+        chapterRange: currentChapterRange,
         chapterListLength: wordList.totalChapters,
         words: shuffleWords,
-        setChapterNumber: setCurrentChapter,
+        setChapterNumberRange: setCurrentChapterRange,
       }
 }
 

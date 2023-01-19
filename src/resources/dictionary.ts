@@ -5,6 +5,7 @@
   category: string
   url: string
   length: number
+  chapterLength?: number
 }
 
 /**
@@ -12,6 +13,15 @@
  * Why arrays? Because it keeps the order across browsers.
  */
 export const dictionaries: Dictionary[] = [
+  {
+    id: 'new900_1',
+    name: '新英语900句顺序',
+    description: '新英语900句顺序',
+    category: '英语学习',
+    url: '',
+    length: 900,
+    chapterLength: 10,
+  },
   { id: 'cet4', name: 'CET-4', description: '大学英语四级词库', category: '英语学习', url: '', length: 2607 },
   { id: 'cet6', name: 'CET-6', description: '大学英语六级词库', category: '英语学习', url: './dicts/CET6_T.json', length: 2345 },
   { id: 'gmat', name: 'GMAT', description: 'GMAT 词库', category: '英语学习', url: './dicts/GMAT_3_T.json', length: 3047 },

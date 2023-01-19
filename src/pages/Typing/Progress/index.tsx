@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { IsDesktop } from 'utils/utils'
 
 export type ProgressProps = {
   order: number
@@ -23,7 +24,7 @@ const Progress: React.FC<ProgressProps> = ({ order, wordsLength }) => {
   }, [order, wordsLength])
 
   return (
-    <div className="relative pt-1 w-1/4 mt-auto">
+    <div className={`relative pt-1 ${IsDesktop() ? 'w-1/4' : 'w-full'} mt-auto`}>
       <div className="overflow-hidden h-2 mb-4 text-xs flex rounded-large bg-indigo-100 dark:bg-indigo-200 transition-all duration-300">
         <div
           style={{ width: `${progress}%` }}

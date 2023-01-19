@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback, useLayoutEffect } from 'react'
 import Letter, { LetterState } from './Letter'
-import { isLegal, isChineseSymbol } from '../../utils/utils'
+import { isLegal, isChineseSymbol, IsDesktop } from '../../utils/utils'
 import useSounds from 'hooks/useSounds'
 import style from './index.module.css'
 import WordSound from 'components/WordSound'
@@ -13,6 +13,7 @@ const Word: React.FC<WordProps> = ({ word = 'defaultWord', onFinish, isStart, is
 
   word = word.replace(new RegExp(' ', 'g'), EXPLICIT_SPACE)
   word = word.replace(new RegExp('…', 'g'), '..')
+  word = word.replace(new RegExp('⋯', 'g'), '..')
 
   const [inputWord, setInputWord] = useState('')
   const [statesList, setStatesList] = useState<LetterState[]>([])
@@ -99,24 +100,38 @@ const Word: React.FC<WordProps> = ({ word = 'defaultWord', onFinish, isStart, is
 
   const playWordSound = pronunciation !== false
 
+  let wordXlRate = 5
+
+  const wordCount = word.split('␣').length
+
+  if (wordCount > 5) {
+    wordXlRate = 3
+  }
+  if (wordCount > 7) {
+    wordXlRate = 1
+  }
+  if (!IsDesktop()) {
+    wordXlRate = 1
+  }
+
   return (
-    <div className="flex justify-center pt-4 pb-1">
-      <div className="relative">
-        <div className={`flex items-center justify-center ${hasWrong ? style.wrong : ''}`}>
-          {/* {console.log(inputWord, word)} */}
-          {word.split('').map((t, index) => {
-            return (
-              <Letter
-                key={`${index}-${t}`}
-                visible={statesList[index] === 'correct' ? true : wordVisible}
-                letter={t}
-                state={statesList[index]}
-              />
-            )
-          })}
-        </div>
-        {playWordSound && <WordSound word={originWord} inputWord={inputWord} className={`${style['word-sound']}`} />}
+    <div className="text-center pt-4 pb-1">
+      <div className={`${hasWrong ? style.wrong : ''} break-all`}>
+        {word.split('').map((t, index) => {
+          return (
+            <Letter
+              key={`${index}-${t}`}
+              visible={/[^a-zA-Z0-9']/.test(t) || statesList[index] === 'correct' ? true : wordVisible}
+              letter={t}
+              state={statesList[index]}
+              fontXlRate={wordXlRate}
+            />
+          )
+        })}
       </div>
+      {playWordSound && (wordVisible || IsDesktop()) && (
+        <WordSound word={originWord} inputWord={inputWord} className={`${style['word-sound']}`} />
+      )}
     </div>
   )
 }
