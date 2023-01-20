@@ -38,7 +38,7 @@ export function ChoiceApp() {
 
       console.log(rndOrder, wordList)
 
-      handleTimer = setTimeout(read, Math.max(3000, (word?.name + '').split(' ').length * 1500))
+      handleTimer = setTimeout(read, Math.max(4000, (word?.name + '').split(' ').length * 1500))
     }
 
     if (wordList) {
