@@ -21,6 +21,7 @@ const Word: React.FC<WordProps> = ({ word = 'defaultWord', onFinish, isStart, is
   const [hasWrong, setHasWrong] = useState(false)
   const [playKeySound, playBeepSound, playHintSound] = useSounds()
   const { pronunciation } = useAppState()
+  const [subWord, setSubWord] = useState<string>('')
 
   const onKeydown = useCallback(
     (e) => {
@@ -114,6 +115,25 @@ const Word: React.FC<WordProps> = ({ word = 'defaultWord', onFinish, isStart, is
     wordXlRate = 1
   }
 
+  const subWords: { subWord: string; startIndex: number; endIndex: number }[] = []
+  let prevChr = ''
+  let curSubWord = ''
+  let curSubWordStartIdx = 0
+
+  word.split('').forEach((chr, chrIdx) => {
+    prevChr = chrIdx === 0 ? '^' : word[chrIdx - 1]
+
+    if (/[a-zA-Z0-9']/.test(chr)) {
+      if (/[^a-zA-Z0-9']/.test(prevChr)) {
+        curSubWord = ''
+        curSubWordStartIdx = chrIdx
+      }
+      curSubWord += chr
+    } else if (/[a-zA-Z0-9']/.test(prevChr)) {
+      subWords.push({ subWord: curSubWord, startIndex: curSubWordStartIdx, endIndex: chrIdx - 1 })
+    }
+  })
+
   return (
     <div className="text-center pt-4 pb-1">
       <div className={`${hasWrong ? style.wrong : ''} break-all`}>
@@ -125,13 +145,28 @@ const Word: React.FC<WordProps> = ({ word = 'defaultWord', onFinish, isStart, is
               letter={t}
               state={statesList[index]}
               fontXlRate={wordXlRate}
+              onClick={(e) => {
+                if (wordVisible) {
+                  const subWord = subWords.find((w) => w.startIndex <= index && w.endIndex >= index)
+
+                  if (subWord) {
+                    setSubWord(subWord?.subWord)
+                    console.log(subWord.subWord)
+                  }
+                  e.preventDefault()
+                  e.stopPropagation()
+                }
+              }}
             />
           )
         })}
       </div>
-      {playWordSound && (wordVisible || IsDesktop()) && (
-        <WordSound word={originWord} inputWord={inputWord} className={`${style['word-sound']}`} />
-      )}
+      <div className="relative hidden">
+        {playWordSound && (wordVisible || IsDesktop()) && (
+          <WordSound word={originWord} inputWord={inputWord} className={`${style['word-sound']}`} />
+        )}
+        {subWord ? <WordSound word={subWord} inputWord={''} className={`${style['word-sound']}`} /> : null}
+      </div>
     </div>
   )
 }
