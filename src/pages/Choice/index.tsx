@@ -52,7 +52,7 @@ export function ChoiceApp() {
     <Main>
       <div className="container h-full relative flex mx-auto flex-col items-center">
         <div className="w-full text-center">
-          <span className="text-xs text-gray-500">温馨提示: 使用电脑食用风味更佳</span>
+          <span className="text-xs text-gray-500 dark:text-gray-300">温馨提示: 使用电脑食用风味更佳</span>
         </div>
         <div className="p-4">
           <select
@@ -77,6 +77,7 @@ export function ChoiceApp() {
               const num = parseInt(e.currentTarget.selectedOptions[0].value)
               wordList?.setChapterNumberRange({ start: num, end: num })
               setOrder(0)
+              setVisible(false)
             }}
           >
             {Array.from({ length: Math.ceil(selectedDictionary.length / numWordsPerChapter) }).map((_, idx) => {
@@ -94,6 +95,7 @@ export function ChoiceApp() {
               const num = parseInt(e.currentTarget.selectedOptions[0].value)
               wordList?.setChapterNumberRange({ start: wordList.chapterRange.start, end: num })
               setOrder(0)
+              setVisible(false)
             }}
           >
             {Array.from({ length: Math.ceil(selectedDictionary.length / numWordsPerChapter) }).map((_, idx) => {
@@ -130,7 +132,7 @@ export function ChoiceApp() {
               }
             }}
           >
-            <div className="pt-20 text-center">{word.trans[0]}</div>
+            <div className="pt-20 text-center dark:text-white">{word.trans[0]}</div>
 
             <div className="pb-20">
               <Word
