@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react'
 import { useDictionaries, useSelectedDictionary, useSetDictionary } from 'store/AppState'
 import { useChoiceWordList } from './hooks/useChoiceWordList'
 import random from 'random'
+import { DefaultWordsPerChapter } from 'pages/Typing/hooks/useWordList'
 
 export function ChoiceApp() {
   const [order, setOrder] = useState<number>(0)
@@ -16,6 +17,7 @@ export function ChoiceApp() {
   const dictionaries = useDictionaries()
   const setDictionary = useSetDictionary()
   const selectedDictionary = useSelectedDictionary()
+  const numWordsPerChapter = selectedDictionary.chapterLength ?? DefaultWordsPerChapter
 
   const [visible, setVisible] = useState(false)
 
@@ -79,7 +81,7 @@ export function ChoiceApp() {
               setOrder(0)
             }}
           >
-            {Array.from({ length: Math.ceil(selectedDictionary.length / 20) }).map((_, idx) => {
+            {Array.from({ length: Math.ceil(selectedDictionary.length / numWordsPerChapter) }).map((_, idx) => {
               return (
                 <option key={idx} value={idx}>
                   第{idx + 1}章
@@ -96,7 +98,7 @@ export function ChoiceApp() {
               setOrder(0)
             }}
           >
-            {Array.from({ length: Math.ceil(selectedDictionary.length / 20) }).map((_, idx) => {
+            {Array.from({ length: Math.ceil(selectedDictionary.length / numWordsPerChapter) }).map((_, idx) => {
               return (wordList?.chapterRange.start ?? 0) > idx ? null : (
                 <option key={idx} value={idx}>
                   第{idx + 1}章
