@@ -36,8 +36,6 @@ export function ChoiceApp() {
         document.title = word?.name ?? ''
       }, Math.max(2000, (word?.name + '').split(' ').length * 1000))
 
-      console.log(rndOrder, wordList)
-
       handleTimer = setTimeout(read, Math.max(4000, (word?.name + '').split(' ').length * 1500))
     }
 
@@ -118,7 +116,8 @@ export function ChoiceApp() {
               if (isNext) {
                 if (visible) {
                   setVisible(false)
-                  setOrder(Math.min(Math.max(0, order + 1), wordList?.words?.length ?? 0))
+                  const newWordIdx = Math.max(0, order + 1)
+                  setOrder(newWordIdx >= (wordList?.words?.length ?? 0) ? 0 : newWordIdx)
                 } else {
                   setVisible(true)
                 }
