@@ -4,10 +4,12 @@ import { shuffle } from 'lodash'
 import { useMemo } from 'react'
 import { useSelectedDictionary, useRandomState, useSelectedChapterRange, SelectedChapterRange } from 'store/AppState'
 import useSWR from 'swr'
+import { WordAtom, transWordAtoms } from 'utils/utils'
 
 export type Word = {
   name: string
   trans: string[]
+  wordAtoms?: WordAtom[]
   usphone?: string
   ukphone?: string
 }
@@ -39,6 +41,9 @@ export function useChoiceWordList(): UseChoiceWordListResult | undefined {
         : [],
     [wordList, currentChapterRange, numWordsPerChapter],
   )
+  words.forEach((word) => {
+    word.wordAtoms = transWordAtoms(word.name)
+  })
   const shuffleWords = useMemo(() => (random ? shuffle(words) : words), [random, words])
   return wordList === undefined
     ? undefined

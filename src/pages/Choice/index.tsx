@@ -8,6 +8,8 @@ import { useDictionaries, useSelectedDictionary, useSetDictionary } from 'store/
 import { useChoiceWordList } from './hooks/useChoiceWordList'
 import random from 'random'
 import { DefaultWordsPerChapter } from 'pages/Typing/hooks/useWordList'
+import { WordAtom } from 'utils/utils'
+import { shuffle } from 'lodash'
 
 export function ChoiceApp() {
   const [order, setOrder] = useState<number>(0)
@@ -22,6 +24,11 @@ export function ChoiceApp() {
   const [visible, setVisible] = useState(false)
 
   const word = wordList?.words[order]
+  const [wordAtoms, setWordAtoms] = useState<WordAtom[]>()
+
+  useEffect(() => {
+    word && setWordAtoms(shuffle(word.wordAtoms))
+  }, [word])
 
   useEffect(() => {
     let handleTimer: NodeJS.Timeout
@@ -50,7 +57,30 @@ export function ChoiceApp() {
 
   return (
     <Main>
-      <div className="container h-full relative flex mx-auto flex-col items-center">
+      <div
+        className="container h-full relative flex mx-auto flex-col items-center"
+        onClick={(e) => {
+          let isNext = true
+          if (e.clientX / window.screen.availWidth < 0.5) {
+            isNext = false
+          }
+          if (isNext) {
+            if (visible) {
+              setVisible(false)
+              const newWordIdx = Math.max(0, order + 1)
+              setOrder(newWordIdx >= (wordList?.words?.length ?? 0) ? 0 : newWordIdx)
+            } else {
+              setVisible(true)
+            }
+          } else {
+            if (visible) {
+              setVisible(false)
+            } else {
+              setOrder(Math.min(Math.max(0, order - 1), wordList?.words?.length ?? 0))
+            }
+          }
+        }}
+      >
         <div className="w-full text-center">
           <span className="text-xs text-gray-500 dark:text-gray-300">温馨提示: 使用电脑食用风味更佳</span>
         </div>
@@ -70,7 +100,7 @@ export function ChoiceApp() {
           </select>
         </div>
 
-        <div className="pb-20">
+        <div className="pb-10">
           <select
             value={wordList?.chapterRange.start}
             onChange={(e) => {
@@ -108,47 +138,43 @@ export function ChoiceApp() {
           </select>
         </div>
         {word ? (
-          <div
-            className="container h-full"
-            onClick={(e) => {
-              let isNext = true
-              if (e.clientX / window.screen.availWidth < 0.5) {
-                isNext = false
-              }
-              if (isNext) {
-                if (visible) {
-                  setVisible(false)
-                  const newWordIdx = Math.max(0, order + 1)
-                  setOrder(newWordIdx >= (wordList?.words?.length ?? 0) ? 0 : newWordIdx)
-                } else {
-                  setVisible(true)
-                }
-              } else {
-                if (visible) {
-                  setVisible(false)
-                } else {
-                  setOrder(Math.min(Math.max(0, order - 1), wordList?.words?.length ?? 0))
-                }
-              }
-            }}
-          >
-            <div className="pt-20 text-center dark:text-white">{word.trans[0]}</div>
+          <div className="container h-full p-2">
+            <div className="pt-40">
+              <div className="pt-5 text-center dark:text-white">{word.trans[0]}</div>
 
-            <div className="pb-20">
-              <Word
-                key={`word-${word.name}-${order}`}
-                word={word.name}
-                onFinish={() => {}}
-                isStart={true}
-                isLoop={false}
-                wordVisible={visible}
-              />
+              <div className="pb-5">
+                <Word
+                  key={`word-${word.name}-${order}`}
+                  word={word.name}
+                  onFinish={() => {}}
+                  isStart={true}
+                  isLoop={false}
+                  wordVisible={visible}
+                  WordAtoms={word.wordAtoms}
+                />
+              </div>
+              {visible && switcherState.phonetic && (word.usphone || word.ukphone) && (
+                <Phonetic usphone={word.usphone} ukphone={word.ukphone} />
+              )}
             </div>
-            {switcherState.phonetic && (word.usphone || word.ukphone) && <Phonetic usphone={word.usphone} ukphone={word.ukphone} />}
-
-            <div className="pt-20 pb-10">
+            <div className="pt-10 pb-10">
               <Progress order={order} wordsLength={wordList?.words?.length ?? 0} />
             </div>
+
+            {false && selectedDictionary.sentence && (
+              <div>
+                <h4 className="text-center dark:text-white">提示</h4>
+                <div className="flex flex-wrap justify-center">
+                  {wordAtoms?.map((wordAtom, idx) => {
+                    return (
+                      <span className={`dark:text-white bg-gray-500 p-1 m-1 rounded-md `} key={`${wordAtom.name}-${idx}`}>
+                        {wordAtom.name}
+                      </span>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
           </div>
         ) : null}
       </div>

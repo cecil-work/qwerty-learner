@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback, useLayoutEffect } from 'react'
 import Letter, { LetterState } from './Letter'
-import { isLegal, isChineseSymbol, IsDesktop } from '../../utils/utils'
+import { isLegal, isChineseSymbol, IsDesktop, WordAtom } from '../../utils/utils'
 import useSounds from 'hooks/useSounds'
 import style from './index.module.css'
 import WordSound from 'components/WordSound'
@@ -8,7 +8,7 @@ import { useAppState } from '../../store/AppState'
 
 const EXPLICIT_SPACE = '␣'
 
-const Word: React.FC<WordProps> = ({ word = 'defaultWord', onFinish, isStart, isLoop, wordVisible = true }) => {
+const Word: React.FC<WordProps> = ({ word = 'defaultWord', onFinish, isStart, isLoop, wordVisible = true, WordAtoms }) => {
   const originWord = word
 
   word = word.replace(new RegExp(' ', 'g'), EXPLICIT_SPACE)
@@ -115,25 +115,6 @@ const Word: React.FC<WordProps> = ({ word = 'defaultWord', onFinish, isStart, is
     wordXlRate = 1
   }
 
-  const subWords: { subWord: string; startIndex: number; endIndex: number }[] = []
-  let prevChr = ''
-  let curSubWord = ''
-  let curSubWordStartIdx = 0
-
-  word.split('').forEach((chr, chrIdx) => {
-    prevChr = chrIdx === 0 ? '^' : word[chrIdx - 1]
-
-    if (/[a-zA-Z0-9']/.test(chr)) {
-      if (/[^a-zA-Z0-9']/.test(prevChr)) {
-        curSubWord = ''
-        curSubWordStartIdx = chrIdx
-      }
-      curSubWord += chr
-    } else if (/[a-zA-Z0-9']/.test(prevChr)) {
-      subWords.push({ subWord: curSubWord, startIndex: curSubWordStartIdx, endIndex: chrIdx - 1 })
-    }
-  })
-
   return (
     <div className="text-center pt-4 pb-1">
       <div className={`${hasWrong ? style.wrong : ''} break-all`}>
@@ -145,18 +126,22 @@ const Word: React.FC<WordProps> = ({ word = 'defaultWord', onFinish, isStart, is
               letter={t}
               state={statesList[index]}
               fontXlRate={wordXlRate}
-              onClick={(e) => {
-                if (wordVisible) {
-                  const subWord = subWords.find((w) => w.startIndex <= index && w.endIndex >= index)
+              onClick={
+                WordAtoms
+                  ? (e) => {
+                      if (wordVisible) {
+                        const wordAtom = WordAtoms.find((w) => w.startIndex <= index && w.endIndex >= index)
 
-                  if (subWord) {
-                    setSubWord(subWord?.subWord)
-                    console.log(subWord.subWord)
-                  }
-                  e.preventDefault()
-                  e.stopPropagation()
-                }
-              }}
+                        if (wordAtom) {
+                          setSubWord(wordAtom?.name)
+                          console.log(wordAtom.name)
+                        }
+                        e.preventDefault()
+                        e.stopPropagation()
+                      }
+                    }
+                  : undefined
+              }
             />
           )
         })}
@@ -177,5 +162,6 @@ export type WordProps = {
   isStart: boolean
   wordVisible: boolean
   isLoop: boolean
+  WordAtoms?: WordAtom[]
 }
 export default Word

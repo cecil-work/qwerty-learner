@@ -37,3 +37,32 @@ export function classNames(...classNames: Array<string | void | null>) {
 
   return finallyClassNames.join(' ')
 }
+
+export type WordAtom = { name: string; startIndex: number; endIndex: number }
+export function transWordAtoms(word: string) {
+  const wordAtoms: WordAtom[] = []
+  let prevChr = ''
+  let curSubWord = ''
+  let curSubWordStartIdx = 0
+
+  if (word) {
+    word.split('').forEach((chr, chrIdx) => {
+      prevChr = chrIdx === 0 ? '^' : word[chrIdx - 1]
+
+      if (/[a-zA-Z0-9']/.test(chr)) {
+        if (/[^a-zA-Z0-9']/.test(prevChr)) {
+          curSubWord = ''
+          curSubWordStartIdx = chrIdx
+        }
+        curSubWord += chr
+
+        if (chrIdx === word.length - 1) {
+          wordAtoms.push({ name: curSubWord, startIndex: curSubWordStartIdx, endIndex: chrIdx - 1 })
+        }
+      } else if (/[a-zA-Z0-9']/.test(prevChr)) {
+        wordAtoms.push({ name: curSubWord, startIndex: curSubWordStartIdx, endIndex: chrIdx - 1 })
+      }
+    })
+  }
+  return wordAtoms
+}

@@ -6,6 +6,7 @@
   url: string
   length: number
   chapterLength?: number
+  sentence?: boolean
 }
 
 /**
@@ -21,6 +22,7 @@ export const dictionaries: Dictionary[] = [
     url: '',
     length: 900,
     chapterLength: 10,
+    sentence: true,
   },
   { id: 'cet4', name: 'CET-4', description: '大学英语四级词库', category: '英语学习', url: '', length: 2607 },
   { id: 'cet6', name: 'CET-6', description: '大学英语六级词库', category: '英语学习', url: './dicts/CET6_T.json', length: 2345 },
