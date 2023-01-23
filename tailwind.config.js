@@ -28,5 +28,5 @@ module.exports = {
       backgroundOpacity: ['dark'],
     },
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
 }

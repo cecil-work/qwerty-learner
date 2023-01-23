@@ -1,14 +1,12 @@
 import Main from 'components/Main'
 import Phonetic from 'components/Phonetic'
-import Word from 'components/Word'
 import useSwitcherState from 'pages/Typing/hooks/useSwitcherState'
 import Progress from 'pages/Typing/Progress'
 import React, { useEffect, useState } from 'react'
 import { useDictionaries, useSelectedDictionary, useSetDictionary } from 'store/AppState'
 import { useChoiceWordList } from './hooks/useChoiceWordList'
-import random from 'random'
 import { DefaultWordsPerChapter } from 'pages/Typing/hooks/useWordList'
-import { WordAtom } from 'utils/utils'
+import Word from 'components/Word'
 import { shuffle } from 'lodash'
 
 export function ChoiceApp() {
@@ -22,65 +20,55 @@ export function ChoiceApp() {
   const numWordsPerChapter = selectedDictionary.chapterLength ?? DefaultWordsPerChapter
 
   const [visible, setVisible] = useState(false)
+  const [autoPlay, setAutoPlay] = useState(false)
 
   const word = wordList?.words[order]
-  const [wordAtoms, setWordAtoms] = useState<WordAtom[]>()
 
   useEffect(() => {
-    word && setWordAtoms(shuffle(word.wordAtoms))
-  }, [word])
-
-  useEffect(() => {
-    let handleTimer: NodeJS.Timeout
-    let handleTimer2: NodeJS.Timeout
-    function read() {
-      const rndOrder = random.int(0, (wordList?.words.length ?? 1) - 1)
-
-      const word = wordList?.words[rndOrder]
+    if (visible) {
+      document.title = word?.name ?? ''
+    } else {
       document.title = word?.trans[0] ?? ''
+    }
+  }, [visible, word])
 
+  useEffect(() => {
+    let handleTimer: NodeJS.Timeout | undefined = undefined
+    let handleTimer2: NodeJS.Timeout | undefined = undefined
+    function nextWord() {
+      let curword = word
+
+      setOrder((order) => {
+        const newWordIdx = Math.max(0, order + 1)
+        const newOrder = newWordIdx >= (wordList?.words?.length ?? 0) ? 0 : newWordIdx
+        curword = wordList?.words[newOrder]
+
+        return newOrder
+      })
+
+      handleTimer = setTimeout(nextWord, 2000 * (curword?.wordAtoms?.length ?? 1))
       handleTimer2 = setTimeout(() => {
-        document.title = word?.name ?? ''
-      }, Math.max(2000, (word?.name + '').split(' ').length * 1000))
-
-      handleTimer = setTimeout(read, Math.max(4000, (word?.name + '').split(' ').length * 1500))
+        setVisible(true)
+      }, 1000 * (curword?.wordAtoms?.length ?? 1))
+      setVisible(false)
     }
 
-    if (wordList) {
-      read()
+    if (autoPlay) {
+      nextWord()
+    } else {
+      handleTimer && clearTimeout(handleTimer)
+      handleTimer2 && clearTimeout(handleTimer2)
     }
+
     return () => {
-      clearTimeout(handleTimer)
-      clearTimeout(handleTimer2)
+      handleTimer && clearTimeout(handleTimer)
+      handleTimer2 && clearTimeout(handleTimer2)
     }
-  }, [wordList])
+  }, [autoPlay])
 
   return (
     <Main>
-      <div
-        className="container h-full relative flex mx-auto flex-col items-center"
-        onClick={(e) => {
-          let isNext = true
-          if (e.clientX / window.screen.availWidth < 0.5) {
-            isNext = false
-          }
-          if (isNext) {
-            if (visible) {
-              setVisible(false)
-              const newWordIdx = Math.max(0, order + 1)
-              setOrder(newWordIdx >= (wordList?.words?.length ?? 0) ? 0 : newWordIdx)
-            } else {
-              setVisible(true)
-            }
-          } else {
-            if (visible) {
-              setVisible(false)
-            } else {
-              setOrder(Math.min(Math.max(0, order - 1), wordList?.words?.length ?? 0))
-            }
-          }
-        }}
-      >
+      <div className="container h-full relative flex mx-auto flex-col items-center">
         <div className="w-full text-center">
           <span className="text-xs text-gray-500 dark:text-gray-300">温馨提示: 使用电脑食用风味更佳</span>
         </div>
@@ -139,10 +127,33 @@ export function ChoiceApp() {
         </div>
         {word ? (
           <div className="container h-full p-2">
-            <div className="pt-40">
+            <div
+              className="pt-20"
+              onClick={(e) => {
+                let isNext = true
+                if (e.clientX / window.screen.availWidth < 0.5) {
+                  isNext = false
+                }
+                if (isNext) {
+                  if (visible) {
+                    setVisible(false)
+                    const newWordIdx = Math.max(0, order + 1)
+                    setOrder(newWordIdx >= (wordList?.words?.length ?? 0) ? 0 : newWordIdx)
+                  } else {
+                    setVisible(true)
+                  }
+                } else {
+                  if (visible) {
+                    setVisible(false)
+                  } else {
+                    setOrder(Math.min(Math.max(0, order - 1), wordList?.words?.length ?? 0))
+                  }
+                }
+              }}
+            >
               <div className="pt-5 text-center dark:text-white">{word.trans[0]}</div>
 
-              <div className="pb-5">
+              <div className="pb-20">
                 <Word
                   key={`word-${word.name}-${order}`}
                   word={word.name}
@@ -160,12 +171,26 @@ export function ChoiceApp() {
             <div className="pt-10 pb-10">
               <Progress order={order} wordsLength={wordList?.words?.length ?? 0} />
             </div>
+            <div className="flex items-center mb-4 justify-center">
+              <input
+                id="auto-play"
+                type="checkbox"
+                checked={autoPlay}
+                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                onChange={() => {
+                  setAutoPlay(!autoPlay)
+                }}
+              />
+              <label htmlFor="auto-play" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                自动播放
+              </label>
+            </div>
 
             {false && selectedDictionary.sentence && (
               <div>
                 <h4 className="text-center dark:text-white">提示</h4>
                 <div className="flex flex-wrap justify-center">
-                  {wordAtoms?.map((wordAtom, idx) => {
+                  {shuffle(word?.wordAtoms)?.map((wordAtom, idx) => {
                     return (
                       <span className={`dark:text-white bg-gray-500 p-1 m-1 rounded-md `} key={`${wordAtom.name}-${idx}`}>
                         {wordAtom.name}
