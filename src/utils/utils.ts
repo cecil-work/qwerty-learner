@@ -7,17 +7,7 @@ export const isChineseSymbol = (val: string): boolean =>
   )
 
 export const IsDesktop = () => {
-  const userAgentInfo = navigator.userAgent
-  const Agents = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod']
-
-  let flag = true
-  for (let v = 0; v < Agents.length; v++) {
-    if (userAgentInfo.indexOf(Agents[v]) > 0) {
-      flag = false
-      break
-    }
-  }
-  return flag
+  return !/mobile/i.test(navigator.userAgent)
 }
 
 export function addHowlListener(howl: Howl, ...args: Parameters<Howl['on']>) {
