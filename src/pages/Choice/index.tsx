@@ -164,8 +164,20 @@ export function ChoiceApp() {
                   WordAtoms={word.wordAtoms}
                 />
               </div>
-              {visible && switcherState.phonetic && (word.usphone || word.ukphone) && (
-                <Phonetic usphone={word.usphone} ukphone={word.ukphone} />
+              {visible && (
+                <div
+                  onClick={(e) => {
+                    e.stopPropagation()
+                  }}
+                >
+                  {switcherState.phonetic && (word.usphone || word.ukphone) && <Phonetic usphone={word.usphone} ukphone={word.ukphone} />}
+
+                  <div className="flex justify-center dark:text-white">
+                    <a href={`https://www.deepl.com/translator#zh/en/${word.trans[0]}`} target="_blank" rel="noreferrer">
+                      deepl
+                    </a>
+                  </div>
+                </div>
               )}
             </div>
             <div className="pt-10 pb-10">
