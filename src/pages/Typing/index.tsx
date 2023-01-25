@@ -167,17 +167,25 @@ const App: React.FC = () => {
       ) : (
         <Layout>
           <Header>
-            <Tooltip content="词典章节切换">
-              <NavLink
-                className="text-lg px-4 py-1 rounded-lg transition-colors duration-300 ease-in-out focus:outline-none dark:text-white dark:text-opacity-60 hover:bg-indigo-400 hover:text-white dark:hover:text-opacity-100"
-                to="/gallery"
-              >
+            {window.location.search.includes('no-chapter') ? (
+              <div>
                 {wordList.dictName} 第 {wordList.chapter + 1} 章
-              </NavLink>
-            </Tooltip>
-            <Tooltip content="发音切换">
-              <PronunciationSwitcher state={pronunciation.toString()} changePronunciationState={changePronunciation} />
-            </Tooltip>
+              </div>
+            ) : (
+              [
+                <Tooltip content="词典章节切换">
+                  <NavLink
+                    className="text-lg px-4 py-1 rounded-lg transition-colors duration-300 ease-in-out focus:outline-none dark:text-white dark:text-opacity-60 hover:bg-indigo-400 hover:text-white dark:hover:text-opacity-100"
+                    to="/gallery"
+                  >
+                    {wordList.dictName} 第 {wordList.chapter + 1} 章
+                  </NavLink>
+                </Tooltip>,
+                <Tooltip content="发音切换">
+                  <PronunciationSwitcher state={pronunciation.toString()} changePronunciationState={changePronunciation} />
+                </Tooltip>,
+              ]
+            )}
             <Switcher state={switcherState} dispatch={switcherStateDispatch} />
             <Tooltip content="快捷键 Enter">
               <button
