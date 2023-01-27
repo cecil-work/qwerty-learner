@@ -22,6 +22,8 @@ export function ChoiceApp() {
   const [visible, setVisible] = useState(false)
   const [autoPlay, setAutoPlay] = useState(false)
 
+  const [loopTime, setLoopTime] = useState(0)
+
   const word = wordList?.words[order]
 
   useEffect(() => {
@@ -78,6 +80,7 @@ export function ChoiceApp() {
             onChange={(e) => {
               setDictionary(e.currentTarget.selectedOptions[0].value)
               setOrder(0)
+              setLoopTime(0)
             }}
           >
             {dictionaries.map((dic) => (
@@ -95,6 +98,7 @@ export function ChoiceApp() {
               const num = parseInt(e.currentTarget.selectedOptions[0].value)
               wordList?.setChapterNumberRange({ start: num, end: num })
               setOrder(0)
+              setLoopTime(0)
               setVisible(false)
             }}
           >
@@ -138,7 +142,12 @@ export function ChoiceApp() {
                   if (visible) {
                     setVisible(false)
                     const newWordIdx = Math.max(0, order + 1)
-                    setOrder(newWordIdx >= (wordList?.words?.length ?? 0) ? 0 : newWordIdx)
+                    if (newWordIdx >= (wordList?.words?.length ?? 0)) {
+                      setOrder(0)
+                      setLoopTime(loopTime + 1)
+                    } else {
+                      setOrder(newWordIdx)
+                    }
                   } else {
                     setVisible(true)
                   }
@@ -183,6 +192,7 @@ export function ChoiceApp() {
             <div className="pt-10 pb-10">
               <Progress order={order} wordsLength={wordList?.words?.length ?? 0} />
             </div>
+            <div className="flex items-center mb-4 justify-center dark:text-white">loop time: {loopTime}</div>
             <div className="flex items-center mb-4 justify-center">
               <input
                 id="auto-play"
