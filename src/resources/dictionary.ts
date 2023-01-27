@@ -25,6 +25,16 @@ export const dictionaries: Dictionary[] = [
     sentence: true,
   },
   {
+    id: 'ielts900',
+    name: '雅思英语900句',
+    description: '雅思英语900句',
+    category: '英语学习',
+    url: '',
+    length: 887,
+    chapterLength: 10,
+    sentence: true,
+  },
+  {
     id: '100_7000',
     name: '100句学7000雅思单词',
     description: '100句学7000雅思单词',

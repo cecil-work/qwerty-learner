@@ -1,5 +1,6 @@
 import cet4 from 'assets/CET4_T.json'
 import new900_1 from 'assets/NEW900_1.json'
+import ielts900 from 'assets/ielts900.json'
 import w100_7000 from 'assets/100_7000.json'
 import { shuffle } from 'lodash'
 import { useMemo } from 'react'
@@ -67,6 +68,8 @@ async function fetchWordList(id: string, url: string, numWordsPerChapter: number
     return { words: cet4, totalChapters: Math.ceil(cet4.length / numWordsPerChapter) }
   } else if (id === 'new900_1') {
     return { words: new900_1, totalChapters: Math.ceil(new900_1.length / numWordsPerChapter) }
+  } else if (id === 'ielts900') {
+    return { words: ielts900, totalChapters: Math.ceil(ielts900.length / numWordsPerChapter) }
   } else if (id === '100_7000') {
     return { words: w100_7000, totalChapters: Math.ceil(w100_7000.length / numWordsPerChapter) }
   } else {
