@@ -300,7 +300,7 @@
   { "name": "I was about to leave.", "trans": ["我正要出门。"] },
   { "name": "Can you guess what I was doing this morning?", "trans": ["你能猜到今天上午我在做什么吗？"] },
   { "name": "What's the height of the building?", "trans": ["这座楼有多高？"] },
-  { "name": "How much does the elephant weight?", "trans": ["这个大象有多重？"] },
+  { "name": "How much does the elephant weigh?", "trans": ["这个大象有多重？"] },
   { "name": "What's the color of your new dress?", "trans": ["你的新衣服是什么颜色的？"] },
   { "name": "What's the size of your shoes?", "trans": ["你的鞋多大尺寸？"] },
   { "name": "My brother is twice as tall as your sister.", "trans": ["我弟弟比你妹妹高一倍。"] },
