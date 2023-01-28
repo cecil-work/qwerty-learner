@@ -35,6 +35,16 @@ export const dictionaries: Dictionary[] = [
     sentence: true,
   },
   {
+    id: 'common_style_180',
+    name: '常用句型180',
+    description: '常用句型180',
+    category: '英语学习',
+    url: '',
+    length: 180,
+    chapterLength: 5,
+    sentence: true,
+  },
+  {
     id: '100_7000',
     name: '100句学7000雅思单词',
     description: '100句学7000雅思单词',

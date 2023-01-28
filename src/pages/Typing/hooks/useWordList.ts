@@ -2,6 +2,7 @@ import cet4 from 'assets/CET4_T.json'
 import new900_1 from 'assets/NEW900_1.json'
 import ielts900 from 'assets/ielts900.json'
 import w100_7000 from 'assets/100_7000.json'
+import common_style_180 from 'assets/common_style_180.json'
 import { shuffle } from 'lodash'
 import { useMemo } from 'react'
 import { useSelectedChapter, useSelectedDictionary, useRandomState } from 'store/AppState'
@@ -64,6 +65,8 @@ async function fetchWordList(id: string, url: string, numWordsPerChapter: number
     return { words: new900_1, totalChapters: Math.ceil(new900_1.length / numWordsPerChapter) }
   } else if (id === 'ielts900') {
     return { words: ielts900, totalChapters: Math.ceil(ielts900.length / numWordsPerChapter) }
+  } else if (id === 'common_style_180') {
+    return { words: common_style_180, totalChapters: Math.ceil(common_style_180.length / numWordsPerChapter) }
   } else if (id === '100_7000') {
     return { words: w100_7000, totalChapters: Math.ceil(w100_7000.length / numWordsPerChapter) }
   } else {

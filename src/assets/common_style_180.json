@@ -1,0 +1,518 @@
+[
+  { "name": "That is the reason why I'm not in favour of revising the plan.", "trans": ["这就是我不赞成修正这个计划的原因。"] },
+  { "name": "His failure was due to the fact that he had not practised for a long time.", "trans": ["他的失败是由于他没有练习很长时间。"] },
+  { "name": "It is likely that it will rain in the evening.", "trans": ["可能晚上会下雨。"] },
+  { "name": "How they went to America is what I want to know.", "trans": ["他们如何到的美国是我想知道的事情。"] },
+  { "name": "It occurred to him that he had left his key at home.", "trans": ["他突然想起把钥匙落在了家里。"] },
+  { "name": "The reason why he came late was that he didn't catch the early bus.", "trans": ["他迟到的原因是他没有赶上早班车。"] },
+  { "name": "I'm looking forward to the day when Tai Wan returns to China.", "trans": ["我期待着太晚回归祖国的那一天。"] },
+  { "name": "He sat by the fire, reading a novel.", "trans": ["他坐在火旁，读着一本小说。"] },
+  { "name": "My dream came true at last.", "trans": ["我的梦想最终实现了。"] },
+  { "name": "It will not be long before we meet again.", "trans": ["不久之后我们就会再次见面的。"] },
+  {
+    "name": "The English play in which my students acted at the New Year's party was a great success.",
+    "trans": ["新年聚会上，学生表演的这部英语剧非常成功。"]
+  },
+  {
+    "name": "I worked in a business where almost everyone is waiting for a great chance.",
+    "trans": ["我在一家几乎人人都在等好机会的企业里工作。"]
+  },
+  {
+    "name": "He kept looking at her, wondering whether he had seen her somewhere.",
+    "trans": ["他一直看着她，想知道他是否在某个地方见过她。"]
+  },
+  {
+    "name": "It is a great honor for Beijing that the 2008 Olympic Games will be held in Beijing.",
+    "trans": ["2008年奥运会将在北京举行对北京来说是一个很大的荣誉。"]
+  },
+  { "name": "Timmy was fined a large sum of money by the judge for drunken driving.", "trans": ["由于被判定酒驾，Timmy 被罚了一大笔钱。"] },
+  {
+    "name": "Although he thought he was helping us with the work, he was actually in the way.",
+    "trans": ["尽管他认为是在帮我们，实际上是在碍事。"]
+  },
+  {
+    "name": "Most hotels have websites where you can find answers to your questions.",
+    "trans": ["大多数旅馆都有你可以找到你问题答案的网站。"]
+  },
+  {
+    "name": "That most of languages are now threatened and may disappear is a serious matter to the people.",
+    "trans": ["大多数语言受到威胁可能会消失，这对人们来说是件危急的事情。"]
+  },
+  {
+    "name": "The fact that Great Britain is made up of three countries is still unknown to many people.",
+    "trans": ["很多人仍然不知道英国由三个国家组成。"]
+  },
+  { "name": "Now that you've got a chance, you might as well make full use of it.", "trans": ["既然你有机会，不妨好好利用它。"] },
+  {
+    "name": "It was only when I reread his poems recently that I begin to appreciate their beauty.",
+    "trans": ["在我重读他诗歌的时候，我才开始领会它们的美。"]
+  },
+  {
+    "name": "As is reported in the newspapers, talks between the two countries are making progress.",
+    "trans": ["正如报纸上所报道的那样，两国之间的谈话正在取得进展。"]
+  },
+  {
+    "name": "They came to the conclusion that not all things can be done by a computer.",
+    "trans": ["他们得出结论，不是所有的事情都可以被计算机做。"]
+  },
+  { "name": "Smoking does great harm to our health.", "trans": ["吸烟对我们的健康造成很大的危害。"] },
+  { "name": "Only then did he realize his mistakes.", "trans": ["仅仅那个时候他才意识到他的错误。"] },
+  { "name": "Come and see me whenever you are convenient .", "trans": ["方便的时候来看看我。"] },
+  {
+    "name": "I thought Jim would say something about his school report , but he didn't mention it .",
+    "trans": ["我想吉姆会说一些关于他成绩单的事情，但是他没有提。"]
+  },
+  {
+    "name": "By the end of last year , another new gymnasium had been completed in Beijing.",
+    "trans": ["到去年年底为止，另一个体育馆已经在北京被建成了。"]
+  },
+  { "name": "when and where to go for the on-salary holiday has not been decided.", "trans": ["带薪休假的时间和地点还没有被决定。"] },
+  {
+    "name": "I wonder why Jenny hasn't written us recently. We should have heard from her by now.",
+    "trans": ["我想知道珍妮最近没给我们写信的原因，目前为止我们本应该收到她的来信的。"]
+  },
+  {
+    "name": "He will have learned English for eight years by the time he graduates from the university next year.",
+    "trans": ["到明年他从大学毕业的时候，他将学习英语八年了。"]
+  },
+  {
+    "name": "I feel it is your husband who is to blame for the spoiled child .",
+    "trans": ["我感觉应该为这个被宠坏的孩子受到责备的人是你的丈夫。"]
+  },
+  {
+    "name": "Rainforests are being cut and burned at such a speed that they will disappear from the earth in the near future .",
+    "trans": ["雨林正在被以如此快的速度被砍伐和燃烧以至于不远的将来它们就会从地球上消失。"]
+  },
+  { "name": "It will not be long before we know the result of the experiment .", "trans": ["不久之后，我们就会知道实验的结果了。"] },
+  {
+    "name": "Selecting a mobile phone for personal use is no easy task because technology is changing so rapidly.",
+    "trans": ["选择一部供个人使用的手机不是件简单的事情，因为科技改变如此的迅速。"]
+  },
+  {
+    "name": "In such dry weather , the flowers will have to be watered if they are to survive .",
+    "trans": ["在这样干旱的天气，这些花要想活下来就必须被浇水。"]
+  },
+  { "name": "Hundreds of jobs will be lost if the factory closes .", "trans": ["如果工厂关闭，成百上千的工作将消失。"] },
+  {
+    "name": "A new cinema is being built here .They hope to finish it next month .",
+    "trans": ["一家新的影院正在这里被建。他们希望下个月完成它。"]
+  },
+  {
+    "name": "The reporter said that the UFO was traveling east to west when he saw it .",
+    "trans": ["这位记者说，不明飞行物正在由西向东移动时，他看到了它。"]
+  },
+  {
+    "name": "All the preparations for the task have been completed , and we are really to start.",
+    "trans": ["这项任务的所有准备工作已经完成，我们真的要出发了。"]
+  },
+  { "name": "Try some of the juice-perhaps you will like it .", "trans": ["尝尝这个果汁，可能你会喜欢的。"] },
+  { "name": "The price has gone down , but I doubt whether it will remain so .", "trans": ["价格已经下降了，但是我怀疑是否会保持这样。"] },
+  { "name": "No sooner had he got to the lab than he set out to do the experiment.", "trans": ["他一到实验室就开始做实验。"] },
+  {
+    "name": "Helen had left her key in the office, so she had to wait until her husband came back home .",
+    "trans": ["海伦把钥匙落在了办公室，所以在她丈夫回来之前必须等。"]
+  },
+  { "name": "An awful accident did , however , occur the other day .", "trans": ["几天前确实发生了一场糟糕的事故。"] },
+  {
+    "name": "In some western countries , demand for graduates from MBA courses has fallen down .",
+    "trans": ["在一些西方国家，对MBA课程的毕业生的要求已经降低了。"]
+  },
+  {
+    "name": "The evening news comes on at seven o'clock and lasts only thirty minutes.",
+    "trans": ["晚间新闻在七点开始，仅仅持续三十分钟。"]
+  },
+  { "name": "It was not a serious illness , and she soon got over it.", "trans": ["那不是一场严重的疾病，不久她就克服了。"] },
+  {
+    "name": "The final examination is coming up soon. It is time for us to get down to our studies.",
+    "trans": ["期末考试不久就要来了，我们该开始认真学习了。"]
+  },
+  {
+    "name": "John was late for the business meeting because his flight had been delayed by a heavy storm.",
+    "trans": ["约翰开商业会议迟到了，因为他的航班被一场严重的暴风雪耽搁了。"]
+  },
+  { "name": "The Internet has brought about big changes in the way we work .", "trans": ["互联网给我们的工作方式带来很大的改变。"] },
+  {
+    "name": "Lose one hour in the morning and you will be looking for it in the rest of the day .",
+    "trans": ["在早晨失去一个小时，剩下的一天你都会一直在寻找它。"]
+  },
+  {
+    "name": "I am sure that Laura's latest play , once staged, will prove a great success.",
+    "trans": ["我确信劳拉最新的戏剧一旦在舞台上演，将会是巨大的成功。"]
+  },
+  {
+    "name": "I don't mind picking up your things from the store. Besides, the walk will do me good .",
+    "trans": ["我不介意去商店取你的东西，而且，走路对我有好处。"]
+  },
+  {
+    "name": "People may have different opinions about Mary, but I admire her. After all, she is a great musician.",
+    "trans": ["人们对于玛丽可能有不同的看法，但是我欣赏她。毕竟，她是一个伟大的音乐家。"]
+  },
+  { "name": "I want to know whether the thief was caught on the spot.", "trans": ["我想知道这个贼是否在现场被抓住了。"] },
+  {
+    "name": "Our club is open to adults only. It seems that your children have entered without permission.",
+    "trans": ["我们的俱乐部仅仅对成年人开放。似乎你的孩子未经许可就进去了。"]
+  },
+  {
+    "name": "You are saying that everyone should be equal, and this is where I disagree.",
+    "trans": ["你说每个人都应该是平等的，这也是我所同意的。"]
+  },
+  {
+    "name": "A modern city has been set up in what was a wasteland ten years ago.",
+    "trans": ["一个现代城市被建在了十年前曾是荒地的地方。"]
+  },
+  {
+    "name": "I think father would like to know what I've been up to so far, so I decide to write him a letter.",
+    "trans": ["我觉得爸爸想要知道我目前在干什么，所以我决定给他写封信。"]
+  },
+  {
+    "name": "Parents are taught to understand how important education is to their children's future.",
+    "trans": ["父母们被告诉要理解教育对他们的孩子是多么的重要。"]
+  },
+  {
+    "name": "The other day, my brother drove his car down the street at what I thought was a dangerous speed.",
+    "trans": ["几天前，我的哥哥以我认为很危险的速度在街上开车。"]
+  },
+  {
+    "name": "Along with the letter was his promise that he would visit me this coming Christmas.",
+    "trans": ["他的承诺附在信后，他会在即将来临的圣诞节来看我。"]
+  },
+  {
+    "name": "There is a new problem involved in the popularity of private cars that road conditions need to be improved.",
+    "trans": ["有一个新的问题涉及私人汽车的普及，道路条件需要改善。"]
+  },
+  {
+    "name": "What made the school proud was that more than 90% of the students had been admitted to key universities.",
+    "trans": ["使这所学校自豪的是，超过90％的学生进入了重点大学。"]
+  },
+  {
+    "name": "Perseverance is a kind of quality and that's what it takes to do anything well.",
+    "trans": ["坚持是一种品质，那是做好任何事情都需要的。"]
+  },
+  {
+    "name": "That fashion differs from country to country may reflect the cultural differences from one aspect.",
+    "trans": ["时尚因国而异，从一个方面影响着文化差异。"]
+  },
+  {
+    "name": "What she couldn't understand was why fewer and fewer students showed interest in her lessons.",
+    "trans": ["她不能理解的是为什么越来越少的同学对她的课感兴趣。"]
+  },
+  { "name": "It was a matter of who would take the position.", "trans": ["是谁担任这个职位的问题。"] },
+  { "name": "Whether we'll go camping tomorrow depends on the weather.", "trans": ["我们明天是否去野营取决于天气。"] },
+  { "name": "Do you still remember the farm (that) we visited three months ago?", "trans": ["你仍然记得三个月前我们参观过的工厂吗？"] },
+  {
+    "name": "The journey around the world took the old sailor nine months, during which the sailing time was 226 days.",
+    "trans": ["环游世界花了这个老士兵九个月的时间，其中226天都在航行。"]
+  },
+  { "name": "There were dirty marks on her trousers where she had wiped her hands.", "trans": ["在她裤子上擦过手的地方，有脏的痕迹。"] },
+  { "name": "There are altogether eleven books on the shelf, of which five are mine.", "trans": ["架子上总共有11本书，其中5本是我的。"] },
+  {
+    "name": "Helen was much kinder to her youngest son than to the others, which, of course, made the others envy him.",
+    "trans": ["海伦对她最小的儿子比对其他的孩子要好，这当然使得其他孩子嫉妒他。"]
+  },
+  { "name": "As is often the case, we have worked out the production plan.", "trans": ["正如经常的情况，我们已经制定出了生产计划。"] },
+  { "name": "There was a time when I hated to go to school.", "trans": ["有一段时期我讨厌去上学。"] },
+  {
+    "name": "There are two buildings, the larger of which stands nearly a hundred feet high.",
+    "trans": ["有两座建筑物，稍大的这座几乎100英尺高。"]
+  },
+  { "name": "What surprised me was not what he said but the way he said it.", "trans": ["使我惊奇的不是他说的内容，而是他说话的方式。"] },
+  {
+    "name": "A fast food restaurant is the place where, just as the name suggests, eating is performed quickly.",
+    "trans": ["一个好的快餐馆，正如我建议的那样，是吃饭可以很快的地方。"]
+  },
+  { "name": "Don't leave the water running while you brush your teeth.", "trans": ["当你刷牙的时候，不要使水一直流。"] },
+  {
+    "name": "The flu is believed to be caused by viruses that like to reproduce in the cells inside the human nose and throat.",
+    "trans": ["流感被认为是被喜欢在人的鼻子和喉咙的细胞里进行复制的病毒导致的。"]
+  },
+  { "name": "Having been attacked by terrorists, the tall building collapsed.", "trans": ["被恐怖分子袭击以后，这座高大的建筑物倒塌了。"] },
+  {
+    "name": "Attracted by the beauty of nature, the girl from London decided to spend another two days on the farm.",
+    "trans": ["被自然的美丽吸引了，这个来自伦敦的女孩决定在这个农场再待两天。"]
+  },
+  {
+    "name": "The man insisted on finding a taxi for me even though I told him I lived nearby.",
+    "trans": ["这个男人坚持要给我找辆出租车，尽管我告诉他我就住在附近。"]
+  },
+  { "name": "Stand over there and you will be able to see it better.", "trans": ["站到那边去，你会看得更好。"] },
+  { "name": "The accident is reported to have occurred on the first day in February.", "trans": ["据报道，事故发生在二月一号。"] },
+  { "name": "Why! I have nothing to confess. What is it that you want to say?", "trans": ["为什么！我没有什么可承认的。你到底想说什么？"] },
+  { "name": "There are many kinds of sports, but my favorite is swimming.", "trans": ["有各种各样的体育运动，但是我最喜欢的是游泳。"] },
+  { "name": "He got to the station early for fear of missing his train.", "trans": ["他早早地到了火车站，以免误了火车"] },
+  { "name": "My English-Chinese dictionary has disappeared. Who could have taken it?", "trans": ["我的英汉词典消失了。可能是谁拿的呢？"] },
+  {
+    "name": "It has been announced that candidates shall remain in their seats until all the papers have been collected.",
+    "trans": ["据宣布，直到所有试卷收上去，应考者必须一直待在座位上。"]
+  },
+  {
+    "name": "Oh, I am not feeling well in the stomach. I should not have eaten so much fried chicken just now.",
+    "trans": ["噢，我胃不舒服。我刚才本不该吃那么多炸鸡的。"]
+  },
+  {
+    "name": "I was really anxious about you. You should not have left home without a word.",
+    "trans": ["我真的很担心你。你本不该一句话不说就离开家的。"]
+  },
+  {
+    "name": "You can not imagine that a well-behaved gentleman should be so rude to a lady.",
+    "trans": ["你难以想象一个行为良好的绅士竟然对一位女士如此粗鲁。"]
+  },
+  {
+    "name": "Mr Bush is on time for everything. How can it be that he was late for the opening ceremony?",
+    "trans": ["布什先生做一切事情都很准时。他开幕式怎么会迟到呢？"]
+  },
+  {
+    "name": "My sister met him at the Grand Theater yesterday afternoon, so he could not have attended your lecture.",
+    "trans": ["我妹妹昨天在大剧院遇到了他，所以他不可能参加了你的讲座。"]
+  },
+  {
+    "name": "There was a lot of fun at yesterday's party. You ought to have come, but why didn't you?",
+    "trans": ["昨天聚会非常快乐。你本该来的，可是为什么没来呢？"]
+  },
+  {
+    "name": "The fire spread through the hotel very quickly but everyone was able to get out.",
+    "trans": ["火很快的蔓延遍了旅馆，但是每个人都逃了出来。"]
+  },
+  {
+    "name": "When he was there, he would go to that coffee shop at the corner after work every day.",
+    "trans": ["当他在那里的时候，每天下班后常常去角落里的那家咖啡店。"]
+  },
+  {
+    "name": "It is certain that he will hand over his business to his son when he gets old.",
+    "trans": ["他老的时候，一定会把生意移交给他的儿子。"]
+  },
+  {
+    "name": "On hearing the news of the accident in the coal mine, she went pale.",
+    "trans": ["一听说煤矿事故的消息，他的脸色就变得苍白了。"]
+  },
+  {
+    "name": "We have to get in the wheat as soon as possible because a storm is on the way.",
+    "trans": ["我们必须尽可能快的收割小麦，暴风雨马上就要来了。"]
+  },
+  { "name": "Once a decision has been made, all of us should stick to it.", "trans": ["一旦决定被做，我们所有人都要坚持这个决定。"] },
+  {
+    "name": "Helen always helps her mother even though going to school takes up most of her day.",
+    "trans": ["海伦总是帮她妈妈忙，即使去上学占据了她几乎一天的时间。"]
+  },
+  {
+    "name": "If anybody calls, tell them I am out, and ask them to leave their names and addresses.",
+    "trans": ["如果有人打电话，告诉他们我不在，让他们留下名字和地址。"]
+  },
+  {
+    "name": "Don't mention that at the beginning of the story, or it may give away the shocking ending.",
+    "trans": ["在故事开始的时候不要提它，否则，结尾可能会恨突兀。"]
+  },
+  {
+    "name": "The idea puzzled me so much that I stopped for a few seconds to try to make it out.",
+    "trans": ["这个想法使我如此迷惑，以至于我停下几秒钟努力想明白它。"]
+  },
+  {
+    "name": "The taxi driver often reminds passengers to take their belongings when they leave the car.",
+    "trans": ["当乘客离开时，出租车司机经常提醒他们带好行李。"]
+  },
+  {
+    "name": "It is so nice to hear from her. Believe it or not, we last met more than thirty years ago.",
+    "trans": ["收到她的来信真是太好了。不管你信不信，我们上次见面是在三十多年前。"]
+  },
+  {
+    "name": "Be careful when you cross this very busy street. If not, you may get run over by a car.",
+    "trans": ["穿过这条繁忙街道时要小心。否则，你可能会被车撞倒。"]
+  },
+  {
+    "name": "His mother had thought it would be good for his character to get away from home and earn some money on his own.",
+    "trans": ["他的妈妈本以为独自离家挣钱会对他的性格有好处。"]
+  },
+  { "name": "As we joined the big crowd, I got separated from my friends.", "trans": ["当我们加入一大群人时，我和我的朋友走散了。"] },
+  { "name": "Would you slow down a bit please? I can not keep up with you.", "trans": ["你能慢一点吗？我跟不上你了。"] },
+  {
+    "name": "Nick is looking for another job because nothing he does satisfies his boss.",
+    "trans": ["尼克正在找新工作，因为他现在做的一切都不能使他的老板满意。"]
+  },
+  { "name": "Watch him and then try to copy what he does.", "trans": ["观察他，然后努力模仿他做的。"] },
+  {
+    "name": "She looked up his number in the phone book to make sure that she had got it right.",
+    "trans": ["她在电话本里查找他的电话号码以确保之前输入正确。"]
+  },
+  { "name": "It is wise to have some money put away for old age.", "trans": ["存一些钱以备年老是明智的做法。"] },
+  {
+    "name": "The thing that matters is not whether you fail or not, but whether you try or not.",
+    "trans": ["重要的是不是你是否失败而是你是否尝试。"]
+  },
+  {
+    "name": "Have a good rest, and you need to save your energy for the tennis match this afternoon.",
+    "trans": ["好好休息，你需要为今天下午的网球赛保存能量。"]
+  },
+  { "name": "I have lost one of my gloves. I must have dropped it somewhere.", "trans": ["我丢了一只手套，我一定是把它掉在了某个地方。"] },
+  {
+    "name": "According to the local regulations, anyone who intends to get a driver's license must get an eye test.",
+    "trans": ["根据当地的条例，任何打算取得驾照的人都必须进行眼睛测试。"]
+  },
+  {
+    "name": "I often see lights in that empty house. Do you think I should report it to the police?",
+    "trans": ["我经常在那个空屋子里看到灯光。你认为我应该报告给警察吗？"]
+  },
+  {
+    "name": "Mr White should have arrived at 8:30 for the meeting, but he didn't show up.",
+    "trans": ["怀特先生本应该八点半到开会的，但是他没有出现。"]
+  },
+  {
+    "name": "Children under 12 years of age in that country must be under adult supervision when in a public library.",
+    "trans": ["在那个国家，十二岁以下的孩子在图书馆时必须被成年人监督。"]
+  },
+  {
+    "name": "I should pay Mary a visit, but I'm not sure whether I will have time this Sunday.",
+    "trans": ["我应该去拜访玛丽，但是我不确定这个周日我是否有时间。"]
+  },
+  {
+    "name": "\"The interest shall be divided into five parts , according to the agreement made by both sides,\" declared the judge.",
+    "trans": ["\"利益必须被分成五部分，根据双方的协议，\"法官宣布。"]
+  },
+  {
+    "name": "You might just as well tell the manufacturer that male customers may not like the design of the furniture.",
+    "trans": ["你不妨告诉制造商男性消费者可能会不喜欢这种家具设计。"]
+  },
+  {
+    "name": "A left-luggage office is a place where bags can be left for a short time, especially at a railway station.",
+    "trans": ["行李寄存处是行李袋可以短时间被存放的地方，尤其是在火车站。"]
+  },
+  {
+    "name": "How can you say that you really understand the whole story if you have covered only part of the article?",
+    "trans": ["如果你只看了文章的一部分，怎么能说你理解了整个故事呢？"]
+  },
+  { "name": "New York, which I visited last year, is a nice old city.", "trans": ["纽约，我去年参观过，是一个美丽的古老的城市。"] },
+  { "name": "We are living in an age when many things are done on computer.", "trans": ["我们生活在一个很多事情都用计算机做的时代。"] },
+  { "name": "As has been announced, we shall have our final exams next month.", "trans": ["正如被宣布的那样，我们下个月期末考试。"] },
+  {
+    "name": "The famous basketball star, who tired to make a comeback, attracted a lot of attention.",
+    "trans": ["这个著名的篮球明星，曾试图东山再起，吸引了很多人的注意。"]
+  },
+  {
+    "name": "He is the only one of the students who has been a winner of scholarship for three years.",
+    "trans": ["在这些学生中，他是唯一一个三年获得奖学金的胜利者。"]
+  },
+  {
+    "name": "Is this the reason that he explained at the meeting for his carelessness in his work?",
+    "trans": ["这是他在会议上解释他工作中粗心的原因吗？"]
+  },
+  {
+    "name": "As is known to everybody, the moon travels round the earth once every month.",
+    "trans": ["众所周知，月亮每月绕着地球转一次。"]
+  },
+  {
+    "name": "He has got himself into a dangerous situation where he is likely to lose control over the plane.",
+    "trans": ["他使他自己陷入一种危险的境地中，可能会失去对飞机的控制。"]
+  },
+  {
+    "name": "John said he'd been working in the office for an hour, which was true.",
+    "trans": ["约翰说他在办公室一直工作了一个小时，是真的。"]
+  },
+  {
+    "name": "Have you seen the film “Titanic,” whose leading actor is world famous?",
+    "trans": ["你看过电影《泰坦尼克号》吗? 它的男主角是世界闻名的。"]
+  },
+  { "name": "It is almost five years since we saw each other last time.", "trans": ["自从我俩上次见面以来，几乎已经五年了。"] },
+  {
+    "name": "Don't leave the sharp knife where our little Jane can get it.",
+    "trans": ["不要把这把锋利的刀放在我们小简可能会够到的地方。"]
+  },
+  {
+    "name": "I do every single bit of housework, while my husband Bob just does the dishes now and then.",
+    "trans": ["我做所有的家务，然而我的丈夫鲍勃只是偶尔洗碗。"]
+  },
+  { "name": "Roses need special care so that they can live through winter.", "trans": ["玫瑰需要特殊的照顾以便它们可以活过寒冬。"] },
+  { "name": "Several weeks had gone by before I realized the painting was missing.", "trans": ["几周之后我才意识到这幅画丢了。"] },
+  {
+    "name": "Mary was holidaying with her family in a wildlife park when she was bitten on the leg by a lion.",
+    "trans": ["玛丽和家人在野生动物园度假时腿被一头狮子咬了。"]
+  },
+  {
+    "name": "Parents should take seriously their children's requests for sunglasses because eye protection is necessary in sunny weather.",
+    "trans": ["父母应该认真对待孩子对于墨镜的要求，因为在阳光强烈的天气里，保护眼睛是必须的。"]
+  },
+  {
+    "name": "While I accept that he is not perfect, I do actually like the person.",
+    "trans": ["尽管我承认他不完美，但我确实喜欢这个人。"]
+  },
+  {
+    "name": "Scientists say it may be five or six years before it is possible to test this medicine on human patients.",
+    "trans": ["科学家说可能五年或十年后才会把这种药给人类进行测试。"]
+  },
+  {
+    "name": "You should try to get a good night's sleep however much work you have to do.",
+    "trans": ["无论你必须做多少工作，都应该尽力在晚上睡好。"]
+  },
+  { "name": "You can eat food free in my restaurant whenever you like.", "trans": ["任何时候只要你喜欢都可以在我的餐馆免费吃饭。"] },
+  {
+    "name": "As far as I can see, there is only one possible way to keep away from the danger.",
+    "trans": ["据我所知，只可能有一种方式可以远离危险。"]
+  },
+  {
+    "name": "However amusing the story is, I have to put it away and focus my attention on study this week.",
+    "trans": ["这周，不管这个故事多么有趣，我都必须把它收起来专注于学习。"]
+  },
+  { "name": "Don't be afraid of asking for help when it is needed.", "trans": ["当需要的时候，不要害怕寻求帮助。"] },
+  {
+    "name": "He made a mistake, but then he corrected the situation before it got worse.",
+    "trans": ["他犯了一个错误，但是在情况变得更糟糕之前他纠正了这种情况。"]
+  },
+  { "name": "A s long as I know the money is safe, I shall not worry about it.", "trans": ["只要我知道钱是安全的，我就不会担心。"] },
+  {
+    "name": "He was about to tell me the secret when someone patted him on the shoulder.",
+    "trans": ["他正要告诉我这个秘密这是有人拍了一下他的肩膀。"]
+  },
+  {
+    "name": "Much as I have traveled, I have never seen anyone who is as capable as John.",
+    "trans": ["尽管我做过很多旅行，我从来没有见过像约翰这样有能力的人。"]
+  },
+  {
+    "name": "The men will have to wait all day unless the doctor works faster.",
+    "trans": ["除非医生工作速度加快，否则这个男人必须等一整天。"]
+  },
+  { "name": "I gave the money to Mary the moment I saw her.", "trans": ["我一看到玛丽就把钱给了她。"] },
+  {
+    "name": "With so much work on hand, you shouldn't have gone to see the game last night.",
+    "trans": ["手边有这么多工作，你昨天晚上本不该去看比赛的。"]
+  },
+  { "name": "Tom could have passed the exam, but he wasn't careful enough.", "trans": ["汤姆本能够通过考试的，但是他不足够细心。"] },
+  { "name": "The road was muddy. It must have rained last night.", "trans": ["道路是泥泞的，昨天晚上一定下过雨了。"] },
+  {
+    "name": "I would have liked to give you a valuable present for your birthday, but I was short of money.",
+    "trans": ["我本想给你一个珍贵的生日礼物的，但是我钱不够。"]
+  },
+  { "name": "If it should snow tomorrow, they couldn't go out.", "trans": ["如果明天下雪，他们就不能出去了。"] },
+  {
+    "name": "Many people agree that a knowledge of English is a must in international trade today.",
+    "trans": ["很多人同意英语知识在今天的国际贸易中是必须的。"]
+  },
+  {
+    "name": "Not until all the fish died in the river did the villagers realize how serious the pollution was.",
+    "trans": ["直到所有的鱼都死光了，村民们才意识到污染有多严重。"]
+  },
+  {
+    "name": "When a pencil is partly in a glass of water, it looks as if it were broken.",
+    "trans": ["当铅笔部分在一杯水里的时候，看上去是断的。"]
+  },
+  {
+    "name": "The visiting minister expressed his satisfaction with the talks, adding that he had enjoyed his stay here.",
+    "trans": ["正在访问的部长表达了他对谈话的满意，并且补充说他喜欢在这里停留的这段时间。"]
+  },
+  { "name": "The missing boy was last seen playing near the river.", "trans": ["这个失踪的男孩上次被看到在河边玩。"] },
+  { "name": "This is a book whose cover is blue/the cover of which is blue.", "trans": ["这是一本封皮是蓝色的书。"] },
+  { "name": "When do you think he will come?", "trans": ["你觉得他什么时候回来。"] },
+  {
+    "name": "Only when you realized the importance of English can you learn it well.",
+    "trans": ["只有你意识到英语重要性的时候，你才能学好它。"]
+  },
+  {
+    "name": "Mary was always speaking highly of her role in the play, Which ,of course, made the others unhappy.",
+    "trans": ["玛丽总是炫耀她在这部剧中的角色，这当然使其他人不高兴。"]
+  },
+  {
+    "name": "The professor gave us another wonderful talk, which I think is of great importance to our English study.",
+    "trans": ["教授又向我们做了精彩的讲话，我认为这对我们的英语学习很重要。"]
+  },
+  { "name": "The telephone had been ringing for two minutes before it was answered.", "trans": ["电话一直响了两分钟才被接。"] },
+  { "name": "My sister wants to work in the power plant which is still being built.", "trans": ["我妹妹想在这家正在被建的发电厂工作。"] },
+  { "name": "My car broke down last week and I still haven't had it repaired.", "trans": ["我的轿车上周坏了，我仍然还没有修好它。"] },
+  { "name": "I was washing my face when suddenly someone knocked at the door.", "trans": ["我正在洗脸这时突然有人敲门。"] },
+  { "name": "I will have finished my work by the end of next week.", "trans": ["下周末为止我就完成我的工作了。"] }
+]
